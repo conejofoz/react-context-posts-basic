@@ -3,6 +3,13 @@ import { PostContext } from "../contexts/PostContext"
 
 export const PostList = ()=>{
     const postCtx = useContext(PostContext)
+
+    const handleRemove = (id:number)=>{
+        postCtx?.dispatch({
+            type: 'remove',
+            payload: {id}
+        })
+    }
     return (
         <div>
             {postCtx?.posts.map(item=>(
@@ -11,7 +18,7 @@ export const PostList = ()=>{
                     <div className="text-sm">{item.body}</div>
                     <button
                      className="bg-blue-500 p-1 rounded-md text-white font-bold"
-                     onClick={()=> postCtx.removePost(item.id)}
+                     onClick={()=> handleRemove(item.id)}
                     >Remover
                     </button>
                 </div>

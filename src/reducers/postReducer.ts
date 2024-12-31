@@ -15,7 +15,7 @@ type RemoveAction = {
     }
 }
 
-type PostActions = AddAction | RemoveAction;
+export type PostActions = AddAction | RemoveAction;
 
 export const postReducer = (posts: Post[], action: PostActions)=>{
     switch(action.type){
