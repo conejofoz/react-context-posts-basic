@@ -1,4 +1,4 @@
-import { createContext, Dispatch, ReactNode, useReducer } from "react";
+import { createContext, Dispatch, ReactNode, useContext, useReducer } from "react";
 import { Post } from "../types/Post";
 import { PostActions, postReducer } from "../reducers/postReducer";
 
@@ -17,3 +17,7 @@ export const PostProvider = ({children}: {children: ReactNode})=>{
         </PostContext.Provider>
     )
 }
+
+
+/* CRIANDO UM HOOK PERSONALISADO PARA ESSE CONTEXT */
+export const usePosts = () => useContext(PostContext)

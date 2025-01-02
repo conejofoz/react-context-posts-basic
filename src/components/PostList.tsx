@@ -1,8 +1,7 @@
-import { useContext } from "react"
-import { PostContext } from "../contexts/PostContext"
+import { usePosts } from "../contexts/PostContext"
 
 export const PostList = ()=>{
-    const postCtx = useContext(PostContext)
+    const postCtx = usePosts();
 
     const handleRemove = (id:number)=>{
         postCtx?.dispatch({
